@@ -32,11 +32,6 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](C:\Users\senat\bootcamp\NU-VIRT-FSF-PT-12-2023-U-LOLC-1\04-Web-APIs\02-Challenge\Assets\04-web-apis-homework-demo.gif)
 
 ##  Process
 
