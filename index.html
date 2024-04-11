@@ -1,51 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <title>Coding Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Code Quiz</title>
-</head>
-
-<body>
-    <header>
-        <div>
-            <a href="./highscores.html"><button class="scores-header" id="view-high-scores">View High Scores</button></a>
-        </div>
-
-        <div class="timer">
-            <p>Time:
-                <span id="timer">0</span>
-            </p>
-        </div>
-    </header>
-
-    <main class="quiz">
-        <div id="quiz-start">
-            <div class="landing" id="start-screen">
-                <h1>Coding Quiz Challenge</h1>
-                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-                <button id="start">Start Quiz</button>
-            </div>
-        </div>
-
-        <div class="hide" id="questions">
-            <h2 id="question-words"></h2>
-            <div class="options" id="options"></div>
-        </div>
-
-        <div class="hide" id="quiz-end">
-            <h2>All Done!</h2>
-            <p>Your final score is: <span id="score-final"></span></p>
-            <p>Please enter your name: <input type="text" id="name" max="3" />
-                <button id="submit-score">Submit</button>
-            </p>
-        </div>
-
-        <div id="feedback" class="feedback hide"></div>
+  <body>
+  
+  <header>
+    <h1>Coding Quiz</h1>
+    <p>
+      Answer the following questions within the time limit. Every question that you get wrong will deduct 10 seconds from your total time. Good luck!
+    </p>
+    <!--leaderboard button mark up--> 
+    <button id="leaderButton">Leaderboards</button>
+    <!--start button mark up--> 
+    <button class="start-button">Start</button>
+    <!--Header that time is updated on--> 
+    <h2> Time:<span class="timer-count"> 0 </span> </h2>
+  </header>
+    <!--Area where quiz content is appended to--> 
+    <main id="quiz-container">
+    
+    
+       
     </main>
-    <script src="./index.js"></script>
-</body>
+    
+    <script src="assets/js/script.js"></script>
+
+  </body>
 
 </html>
