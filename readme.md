@@ -1,4 +1,4 @@
-# 04 Web APIs: Code Quiz
+# Code Quiz
 
 
 ## User Story
@@ -15,10 +15,5 @@ https://mmiller1234321.github.io/webAPIChallenge4/
 
 ## DEMO
 
-![CodingQuiz](https://github.com/mmiller1234321/webAPIChallenge4/assets/148365315/228c84aa-8419-440d-9fd2-9370006b50d6)
-
-
-```
-
-
+![CodingQuiz3](https://github.com/mmiller1234321/webAPIChallenge4/assets/148365315/8740d777-ba59-4756-b920-6314e106d5ba)
 
