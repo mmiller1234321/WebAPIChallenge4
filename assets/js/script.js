@@ -1,3 +1,4 @@
+/* Global variables */
 var quizContainer = document.querySelector("#quiz-container");
 var startButton = document.querySelector(".start-button");
 var timerElement = document.querySelector(".timer-count");
@@ -9,6 +10,7 @@ var score = 0;
 var highScores = [];
 var highNames = [];
 
+/* Initialization function */
 function init() {
     var storedScores = JSON.parse(localStorage.getItem("highScores"));
     var storedNames = JSON.parse(localStorage.getItem("highNames"));
@@ -22,12 +24,14 @@ function init() {
     }
 }
 
+/* Start game function */
 function startGame() {
     timerCount = 60;
     startTimer();
     displayQuestion(0);
 }
 
+/* Timer function */
 function startTimer() {
     timer = setInterval(function() {
         timerCount--;
@@ -43,6 +47,7 @@ function startTimer() {
     }, 1000);
 }
 
+/* Quiz questions */
 const questions = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -71,12 +76,16 @@ const questions = [
     }
 ];
 
+/* Display question function */
 function displayQuestion(index) {
     const currentQuestion = questions[index];
+    const questionCard = document.createElement("div");
+    questionCard.classList.add("question-card");
     const questionEl = document.createElement("h1");
     questionEl.textContent = currentQuestion.question;
+    questionCard.appendChild(questionEl);
     clearQuizContainer();
-    quizContainer.appendChild(questionEl);
+    quizContainer.appendChild(questionCard);
 
     currentQuestion.answers.forEach(function(answer, idx) {
         const answerBtn = document.createElement("button");
@@ -84,10 +93,11 @@ function displayQuestion(index) {
         answerBtn.addEventListener("click", function() {
             handleAnswer(index, idx === currentQuestion.correctAnswerIndex);
         });
-        quizContainer.appendChild(answerBtn);
+        questionCard.appendChild(answerBtn);
     });
 }
 
+/* Handle answer function */
 function handleAnswer(questionIndex, correct) {
     done = true;
     clearInterval(timer);
@@ -110,6 +120,7 @@ function handleAnswer(questionIndex, correct) {
     }, 2000);
 }
 
+/* Display message function */
 function displayMessage(message) {
     const messageEl = document.createElement("h1");
     messageEl.textContent = message;
@@ -117,12 +128,14 @@ function displayMessage(message) {
     quizContainer.appendChild(messageEl);
 }
 
+/* Clear quiz container function */
 function clearQuizContainer() {
     while (quizContainer.firstChild) {
         quizContainer.removeChild(quizContainer.lastChild);
     }
 }
 
+/* Enter score function */
 function enterScore() {
     const initials = prompt("Enter your initials:");
     if (initials) {
@@ -133,6 +146,7 @@ function enterScore() {
     }
 }
 
+/* Leaderboard function */
 function leaderBoard() {
     displayMessage("Leaderboard:");
     highScores.forEach(function(score, index) {
@@ -142,6 +156,7 @@ function leaderBoard() {
     });
 }
 
+/* Set scores function */
 function setScores() {
     const storedScores = JSON.parse(localStorage.getItem("highScores"));
     const storedNames = JSON.parse(localStorage.getItem("highNames"));
@@ -178,7 +193,9 @@ function setScores() {
     localStorage.setItem("highNames", JSON.stringify(highNames));
 }
 
+/* Initialize the game */
 init();
 
+/* Event listeners */
 startButton.addEventListener("click", startGame);
 document.querySelector("#leaderButton").addEventListener("click", leaderBoard);
